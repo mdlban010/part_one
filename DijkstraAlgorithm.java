@@ -108,7 +108,7 @@ class Graph {
     }
 }
 
-class Node {
+class Node implements Comparable<Node>{
     int id;
     List<Edge> neighbours;
     int distance;
@@ -118,6 +118,10 @@ class Node {
         this.id = id;
         neighbours = new ArrayList<>();
         distance = Integer.MAX_VALUE;
+    }
+
+    public int compareTo(Node other){
+        return Integer.compare(this.distance, other.distance);
     }
 }
 
